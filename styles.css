@@ -30,6 +30,12 @@ h1 {
   margin-top: 5px;
 }
 
+.waiting-message {
+  color: blue;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 button {
   margin-top: 10px;
 }

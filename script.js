@@ -7,22 +7,26 @@ function saveSettings(id, removeCheckboxOnError) {
     return;
   }
 
-  // Simulate a network request with random success or failure
-  const isSuccess = Math.random() >= 0.5;
+  // Show waiting message
+  status.innerHTML = "<div class='waiting-message'>Ожидание применения</div>";
 
-  // Simulate a network request
+  // Simulate a network request with random success or failure after 2 seconds
   setTimeout(() => {
-    if (isSuccess) {
-      // Success: show success message
-      status.innerHTML = "<div class='success-message'>Настройки успешно сохранены</div>";
-    } else {
-      // Error: show error message
-      status.innerHTML = `<div class='error-message'>Ошибка: нет соединения с домофоном</div>`;
-      if (removeCheckboxOnError) {
-        checkbox.checked = false;
+    const isSuccess = Math.random() >= 0.5;
+
+    setTimeout(() => {
+      if (isSuccess) {
+        // Success: show success message
+        status.innerHTML = "<div class='success-message'>Настройки успешно сохранены</div>";
+      } else {
+        // Error: show error message
+        status.innerHTML = `<div class='error-message'>Ошибка: нет соединения с домофоном</div>`;
+        if (removeCheckboxOnError) {
+          checkbox.checked = false;
+        }
       }
-    }
-  }, 1000); // Simulate a delay of 1 second
+    }, 2000);
+  }, 0);
 }
 
 function saveSettingsWithType(id, removeCheckboxOnError) {
@@ -34,28 +38,34 @@ function saveSettingsWithType(id, removeCheckboxOnError) {
     return;
   }
 
+  // Show waiting message
+  status.innerHTML = "<div class='waiting-message'>Ожидание применения</div>";
+
   // Determine the operation type based on checkbox state
   const isChecked = checkbox.checked;
-  const isSuccess = Math.random() >= 0.5;
-  let operationType;
 
-  if (isChecked) {
-    operationType = isSuccess ? 'Успешно включили' : 'Ошибка включения';
-  } else {
-    operationType = isSuccess ? 'Успешно выключили' : 'Ошибка выключения';
-  }
-
-  // Simulate a network request
+  // Simulate a network request with random success or failure after 2 seconds
   setTimeout(() => {
-    if (isSuccess) {
-      // Success: show success message
-      status.innerHTML = `<div class='success-message'>${operationType}</div>`;
+    const isSuccess = Math.random() >= 0.5;
+    let operationType;
+
+    if (isChecked) {
+      operationType = isSuccess ? 'Успешно включили' : 'Ошибка включения';
     } else {
-      // Error: show error message
-      status.innerHTML = `<div class='error-message'>${operationType}</div>`;
-      if (removeCheckboxOnError) {
-        checkbox.checked = false;
-      }
+      operationType = isSuccess ? 'Успешно выключили' : 'Ошибка выключения';
     }
-  }, 1000); // Simulate a delay of 1 second
+
+    setTimeout(() => {
+      if (isSuccess) {
+        // Success: show success message
+        status.innerHTML = `<div class='success-message'>${operationType}</div>`;
+      } else {
+        // Error: show error message
+        status.innerHTML = `<div class='error-message'>${operationType}</div>`;
+        if (removeCheckboxOnError) {
+          checkbox.checked = false;
+        }
+      }
+    }, 2000);
+  }, 0);
 }
