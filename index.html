@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Настройки</h1>
+  <div id="settings-form">
+    <div class="scenario">
+      <h2>Сценарий 1: При ошибке галочка пропадает</h2>
+      <label>
+        <input type="checkbox" id="face-recognition-1" />
+        Включить распознавание лиц
+      </label>
+      <button onclick="saveSettings('face-recognition-1', true)">Сохранить</button>
+      <div id="operation-status-1"></div>
+    </div>
+    <div class="scenario">
+      <h2>Сценарий 2: При ошибке галочка остаётся</h2>
+      <label>
+        <input type="checkbox" id="face-recognition-2" />
+        Включить распознавание лиц
+      </label>
+      <button onclick="saveSettings('face-recognition-2', false)">Сохранить</button>
+      <div id="operation-status-2"></div>
+    </div>
+    <div class="scenario">
+      <h2>Сценарий 3: При ошибке галочка пропадает, указываем тип операции</h2>
+      <label>
+        <input type="checkbox" id="face-recognition-3" />
+        Включить распознавание лиц
+      </label>
+      <button onclick="saveSettingsWithType('face-recognition-3', true)">Сохранить</button>
+      <div id="operation-status-3"></div>
+    </div>
+    <div class="scenario">
+      <h2>Сценарий 4: При ошибке галочка остаётся, указываем тип операции</h2>
+      <label>
+        <input type="checkbox" id="face-recognition-4" />
+        Включить распознавание лиц
+      </label>
+      <button onclick="saveSettingsWithType('face-recognition-4', false)">Сохранить</button>
+      <div id="operation-status-4"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

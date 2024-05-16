@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.scenario {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: green;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 10px;
+}

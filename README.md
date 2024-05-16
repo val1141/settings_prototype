@@ -1,1 +1,1 @@
-# settings_prototype
+# device_prototype
